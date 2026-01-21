@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cody Lindley - Web Front-End UI/UX Engineer</title>
+    <meta
+      name="description"
+      content="Cody Lindley is a web front-end UI/UX engineer with 25+ years of experience in HTML, CSS, JavaScript, and client-side performance."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #64748b;
+        --accent: #06b6d4;
+        --bg-dark: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-hover: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --border: #334155;
+        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-2: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Animated background */
+      .bg-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 20%,
+            rgba(37, 99, 235, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 80%,
+            rgba(6, 182, 212, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 50%,
+            rgba(118, 75, 162, 0.05) 0%,
+            transparent 70%
+          );
+        z-index: -1;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Header / Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 16px 0;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-primary);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 16px;
+      }
+
+      .social-links a {
+        color: var(--text-secondary);
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+
+      .hero-text h1 span {
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-text .tagline {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+      }
+
+      .hero-text .description {
+        color: var(--text-muted);
+        margin-bottom: 32px;
+        max-width: 500px;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 32px;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 16px;
+      }
+
+      .btn {
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-primary {
+        background: var(--gradient-2);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+      }
+
+      .btn-secondary {
+        background: var(--bg-card);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-2px);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .code-window {
+        background: var(--bg-card);
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .code-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .code-dot.red {
+        background: #ef4444;
+      }
+      .code-dot.yellow {
+        background: #eab308;
+      }
+      .code-dot.green {
+        background: #22c55e;
+      }
+
+      .code-content {
+        padding: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+
+      .code-content .keyword {
+        color: #c678dd;
+      }
+      .code-content .function {
+        color: #61afef;
+      }
+      .code-content .string {
+        color: #98c379;
+      }
+      .code-content .comment {
+        color: #5c6370;
+      }
+      .code-content .number {
+        color: #d19a66;
+      }
+
+      /* Section Styles */
+      section {
+        padding: 100px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .section-header p {
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Books Section */
+      .books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .book-card {
+        background: var(--bg-card);
+        border-radius: 12px;
+        padding: 24px;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .book-card:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .book-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .book-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .book-card p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Work Section */
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .work-card {
+        background: var(--bg-card);
+        border-radius: 12px;
+        padding: 32px;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .work-card:hover {
+        border-color: var(--primary);
+      }
+
+      .work-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .work-card h3 svg {
+        color: var(--accent);
+      }
+
+      .work-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .work-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      .work-links a:hover {
+        color: var(--accent);
+      }
+
+      .work-links a::before {
+        content: "→";
+        color: var(--primary);
+      }
+
+      /* Articles Section */
+      .articles-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .article-item {
+        background: var(--bg-card);
+        border-radius: 8px;
+        padding: 20px 24px;
+        border: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .article-item:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--primary);
+      }
+
+      .article-item h4 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      .article-item span {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      .show-more {
+        text-align: center;
+        margin-top: 32px;
+      }
+
+      /* Tools Section */
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .tool-card {
+        background: var(--bg-card);
+        border-radius: 10px;
+        padding: 24px;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border-color: var(--accent);
+      }
+
+      .tool-card h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .tool-card p {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      .about-text p {
+        margin-bottom: 24px;
+      }
+
+      .about-text strong {
+        color: var(--text-primary);
+      }
+
+      .about-sidebar {
+        background: var(--bg-card);
+        border-radius: 12px;
+        padding: 32px;
+        border: 1px solid var(--border);
+      }
+
+      .about-sidebar h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      .current-role {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        background: rgba(37, 99, 235, 0.1);
+        border-radius: 8px;
+        margin-bottom: 24px;
+      }
+
+      .current-role img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+      }
+
+      .current-role .role-info h4 {
+        font-size: 0.95rem;
+      }
+
+      .current-role .role-info p {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-secondary);
+      }
+
+      /* Footer */
+      footer {
+        padding: 60px 0;
+        border-top: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .footer-social a {
+        width: 48px;
+        height: 48px;
+        background: var(--bg-card);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+      }
+
+      .footer-social a:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-4px);
+      }
+
+      .footer-text {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Mobile Navigation */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-stats {
+          justify-content: center;
+        }
+
+        .cta-buttons {
+          justify-content: center;
+        }
+
+        .hero-visual {
+          display: none;
+        }
+
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero-text h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-stats {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .tools-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .btn {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gradient"></div>
+
+    <!-- Header -->
+    <header>
+      <nav class="container">
+        <div class="logo">CL</div>
+        <ul class="nav-links">
+          <li><a href="#books">Books</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <div class="social-links">
+          <a
+            href="http://github.com/codylindley"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="http://www.linkedin.com/in/codylindley"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="http://twitter.com/codylindley"
+            target="_blank"
+            aria-label="Twitter"
+          >
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, I'm <span>Cody Lindley</span></h1>
+            <p class="tagline">Web Front-End UI/UX Engineer & Author</p>
+            <p class="description">
+              Principal Software Engineer at Microsoft with 25+ years of
+              experience crafting exceptional web experiences with HTML, CSS,
+              JavaScript, and modern front-end frameworks.
+            </p>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Books Authored</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Articles Written</div>
+              </div>
+            </div>
+
+            <div class="cta-buttons">
+              <a href="#books" class="btn btn-primary">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+                View My Books
+              </a>
+              <a
+                href="http://linkedin.com/in/codylindley"
+                class="btn btn-secondary"
+                target="_blank"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                View Resume
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="code-window">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+              </div>
+              <div class="code-content">
+                <span class="keyword">const</span>
+                <span class="function">developer</span> = {<br />
+                &nbsp;&nbsp;name:
+                <span class="string">"Cody Lindley"</span>,<br />
+                &nbsp;&nbsp;role:
+                <span class="string">"Principal Engineer"</span>,<br />
+                &nbsp;&nbsp;company:
+                <span class="string">"Microsoft"</span>,<br />
+                &nbsp;&nbsp;skills: [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JavaScript"</span
+                >,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"TypeScript"</span
+                >,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"React"</span
+                >,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+                  >"Design Systems"</span
+                ><br />
+                &nbsp;&nbsp;],<br />
+                &nbsp;&nbsp;yearsOfExperience:
+                <span class="number">25</span>,<br />
+                &nbsp;&nbsp;location:
+                <span class="string">"Meridian, Idaho"</span><br />
+                };<br /><br />
+                <span class="comment">// Building the web since 1999</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books">
+      <div class="container">
+        <div class="section-header">
+          <h2>📚 Books & Publications</h2>
+          <p>
+            Authored, co-authored, and technically edited books on JavaScript
+            and web development
+          </p>
+        </div>
+
+        <div class="books-grid">
+          <a
+            href="https://www.amazon.com/JavaScript-Enlightenment-Library-User-Developer/dp/1449342884"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>JavaScript Enlightenment</h3>
+            <p>
+              Deep dive into JavaScript fundamentals and object-oriented
+              patterns
+            </p>
+          </a>
+
+          <a
+            href="http://www.domenlightenment.com/"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>DOM Enlightenment</h3>
+            <p>Exploring JavaScript and the modern DOM</p>
+          </a>
+
+          <a
+            href="https://codylindley.com/jquery_enlightenment.pdf"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>jQuery Enlightenment</h3>
+            <p>Mastering jQuery fundamentals and best practices</p>
+          </a>
+
+          <a
+            href="http://oreilly.com/catalog/9780596159788"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>jQuery Cookbook</h3>
+            <p>O'Reilly cookbook with practical jQuery solutions</p>
+          </a>
+
+          <a
+            href="http://www.apress.com/9781590598320"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>Textpattern Solutions</h3>
+            <p>PHP-based content management made easy</p>
+          </a>
+
+          <a
+            href="http://www.apress.com/9781590592113"
+            class="book-card"
+            target="_blank"
+          >
+            <div class="book-icon">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3>Byte-Size Flash MX</h3>
+            <p>Adventures in design optimization</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2>💼 Featured Work</h2>
+          <p>Guides, handbooks, and component-driven software development</p>
+        </div>
+
+        <div class="work-grid">
+          <div class="work-card">
+            <h3>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+              Front-End Handbooks
+            </h3>
+            <div class="work-links">
+              <a
+                href="https://frontendmasters.com/guides/front-end-handbook/2024/"
+                target="_blank"
+                >2024 Front-End Handbook (Frontend Masters)</a
+              >
+              <a
+                href="https://frontendmasters.com/guides/learning-roadmap/"
+                target="_blank"
+                >Front-End Developer Learning Roadmap</a
+              >
+              <a
+                href="https://frontendmasters.com/books/javascript-enlightenment/"
+                target="_blank"
+                >JavaScript (ES2015+) Enlightenment</a
+              >
+              <a
+                href="https://frontendmasters.com/books/front-end-handbook/2019/"
+                target="_blank"
+                >Front-end Developer Handbook 2019</a
+              >
+              <a href="https://www.reactenlightenment.com/" target="_blank"
+                >React Enlightenment</a
+              >
+            </div>
+          </div>
+
+          <div class="work-card">
+            <h3>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                />
+              </svg>
+              Component-Driven Software
+            </h3>
+            <div class="work-links">
+              <a
+                href="http://codylindley.com/componentdrivensoftware"
+                target="_blank"
+                >Component Driven Software Explained</a
+              >
+              <a
+                href="http://codylindley.com/componentdrivensoftware/#4"
+                target="_blank"
+                >LocusLabs Use Case</a
+              >
+              <a
+                href="https://github.com/codylindley/locuslabs-component-driven-system"
+                target="_blank"
+                >Component-driven System (GitHub)</a
+              >
+              <a
+                href="https://codylindley.github.io/locuslabs-storybook/?path=/story/ui-component-system-overview-introduction--page"
+                target="_blank"
+                >Storybook Documentation</a
+              >
+            </div>
+          </div>
+
+          <div class="work-card">
+            <h3>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+              Conference Talks
+            </h3>
+            <div class="work-links">
+              <a
+                href="https://www.youtube.com/watch?v=q4zEGkjTBFA"
+                target="_blank"
+                >Planning A Front-end JS Application (Video)</a
+              >
+              <a
+                href="http://codylindley.com/spotlight-front-end/#7"
+                target="_blank"
+                >Planning A Front-end JS Application (Slides)</a
+              >
+              <a href="http://codylindley.com/web-unleashed/" target="_blank"
+                >Front-end Driven Applications (Slides)</a
+              >
+              <a
+                href="http://confreaks.com/videos/2218-html5tx2013-dom-it-forgive-forget-embrace"
+                target="_blank"
+                >DOM it, forgive, forget, embrace (Video)</a
+              >
+            </div>
+          </div>
+
+          <div class="work-card">
+            <h3>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+              Interviews
+            </h3>
+            <div class="work-links">
+              <a
+                href="http://developer.telerik.com/content-types/podcast/the-effect-of-es6-javascript-2015-on-development/"
+                target="_blank"
+                >The Effect of JavaScript 2015 (ES6)</a
+              >
+              <a
+                href="https://www.youtube.com/watch?v=IkrhzcqilNE"
+                target="_blank"
+                >jQuery Succinctly Interview (Video)</a
+              >
+              <a
+                href="http://programming.oreilly.com/2013/04/learning-paths-for-javascript-2.html"
+                target="_blank"
+                >Learning Paths for JavaScript</a
+              >
+              <a href="http://codylindley.com/interview/" target="_blank"
+                >Lost Interview</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles">
+      <div class="container">
+        <div class="section-header">
+          <h2>✍️ Selected Articles</h2>
+          <p>
+            Technical articles on JavaScript, React, and front-end development
+          </p>
+        </div>
+
+        <div class="articles-list">
+          <a
+            href="http://developer.telerik.com/featured/19-tips-to-make-learning-angular-2-easier/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>19 Tips to Make Learning Angular 2 Easier</h4>
+            <span>Telerik Developer Network</span>
+          </a>
+          <a
+            href="http://developer.telerik.com/featured/taming-react-setup/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>Taming the React Setup</h4>
+            <span>Telerik Developer Network</span>
+          </a>
+          <a
+            href="http://developer.telerik.com/featured/elevator-pitch-react/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>The Elevator Pitch for React</h4>
+            <span>Telerik Developer Network</span>
+          </a>
+          <a
+            href="http://developer.telerik.com/featured/front-end-application-frameworks-component-architectures/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>Front-end Application Libraries and Component Architectures</h4>
+            <span>Telerik Developer Network</span>
+          </a>
+          <a
+            href="http://developer.telerik.com/featured/jquerys-relevancy-there-and-back-again/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>jQuery's Relevancy – There and Back Again</h4>
+            <span>Telerik Developer Network</span>
+          </a>
+          <a
+            href="http://net.tutsplus.com/tutorials/javascript-ajax/fully-understanding-the-this-keyword/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>Fully Understanding the this Keyword</h4>
+            <span>Tuts+</span>
+          </a>
+          <a
+            href="http://codylindley.com/techpro/2013_05_14__javascript-regular-expression-/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>JavaScript Regular Expression Enlightenment</h4>
+            <span>Tech Pro</span>
+          </a>
+          <a
+            href="http://codylindley.com/techpro/2013_07_24__part-1-backbonejs-deconstructe/"
+            class="article-item"
+            target="_blank"
+          >
+            <h4>Backbone.js Deconstructed</h4>
+            <span>Tech Pro</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+      <div class="container">
+        <div class="section-header">
+          <h2>🛠️ Tools & References</h2>
+          <p>Open source tools and references I've created for the community</p>
+        </div>
+
+        <div class="tools-grid">
+          <a
+            href="http://codylindley.com/jqueryuiwidgets/"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>jQuery Widget Toolkit Comparison</h4>
+            <p>Compare different jQuery UI widget toolkits</p>
+          </a>
+          <a
+            href="https://github.com/codylindley/frontend-tools"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>Frontend Development Tools</h4>
+            <p>Landscaping with frontend development tools</p>
+          </a>
+          <a
+            href="http://codylindley.com/native"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>Native HTML Widgets/Forms</h4>
+            <p>Reference for native HTML form elements</p>
+          </a>
+          <a
+            href="http://www.webbrowsercompatibility.com/"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>Web Browser Compatibility</h4>
+            <p>Compatibility tables for front-end technologies</p>
+          </a>
+          <a
+            href="http://codylindley.com/jqueryselectors/"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>jQuery Selectors</h4>
+            <p>Complete reference for jQuery selectors</p>
+          </a>
+          <a
+            href="http://codylindley.com/thickbox"
+            class="tool-card"
+            target="_blank"
+          >
+            <h4>Thickbox</h4>
+            <p>Classic modal/lightbox jQuery plugin</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>👋 About Me</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a <strong>web front-end UI/UX engineer</strong> and recovering
+              Flash developer with an extensive background working
+              professionally for <strong>25+ years</strong> with HTML, CSS,
+              JavaScript, and client-side performance techniques as it pertains
+              to web development.
+            </p>
+            <p>
+              When I'm not wielding client-side code, I'm likely toying with
+              <strong>interface/interaction design</strong>,
+              <strong>Design Systems</strong>, and
+              <strong>Component UI systems</strong>. I'm passionate about
+              creating scalable, maintainable, and beautiful user interfaces.
+            </p>
+            <p>
+              When not sitting in front of a computer, it's a sure bet I'm
+              hanging out with my wife and three boys in
+              <strong>Meridian, Idaho</strong>.
+            </p>
+          </div>
+
+          <div class="about-sidebar">
+            <h3>Current Role</h3>
+            <div class="current-role">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect width="48" height="48" rx="8" fill="#00A4EF" />
+                <path
+                  d="M12 12h10v10H12V12zm14 0h10v10H26V12zM12 26h10v10H12V26zm14 0h10v10H26V26z"
+                  fill="white"
+                />
+              </svg>
+              <div class="role-info">
+                <h4>Principal Software Engineer</h4>
+                <p>Microsoft</p>
+              </div>
+            </div>
+
+            <div class="location">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Meridian, Idaho
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-social">
+          <a
+            href="http://github.com/codylindley"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="http://www.linkedin.com/in/codylindley"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="http://twitter.com/codylindley"
+            target="_blank"
+            aria-label="Twitter/X"
+          >
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="footer-text">
+          © 2026 Cody Lindley. Building the web since 1999.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Header background on scroll
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(15, 23, 42, 0.95)";
+        } else {
+          header.style.background = "rgba(15, 23, 42, 0.8)";
+        }
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
+      });
+
+      // Make hero visible immediately
+      document.querySelector(".hero").style.opacity = "1";
+      document.querySelector(".hero").style.transform = "translateY(0)";
+    </script>
+  </body>
+</html>
