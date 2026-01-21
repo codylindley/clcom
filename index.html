@@ -6,7 +6,7 @@
     <title>Cody Lindley - Web Front-End UI/UX Engineer</title>
     <meta
       name="description"
-      content="Cody Lindley is a web front-end UI/UX engineer with 26+ years of experience in HTML, CSS, JavaScript, and client-side performance."
+      content="Cody Lindley — Principal Software Engineer at Microsoft, published author, and front-end architect with 26+ years of experience building exceptional web experiences."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,19 +16,19 @@
     />
     <style>
       :root {
-        --primary: #2563eb;
-        --primary-dark: #1d4ed8;
-        --secondary: #64748b;
-        --accent: #06b6d4;
-        --bg-dark: #0f172a;
-        --bg-card: #1e293b;
-        --bg-card-hover: #334155;
-        --text-primary: #f8fafc;
-        --text-secondary: #94a3b8;
-        --text-muted: #64748b;
-        --border: #334155;
-        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --gradient-2: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+        --primary: #b45309;
+        --primary-dark: #92400e;
+        --secondary: #78716c;
+        --accent: #c2410c;
+        --bg-dark: #1c1917;
+        --bg-card: #292524;
+        --bg-card-hover: #3f3a36;
+        --text-primary: #fafaf9;
+        --text-secondary: #a8a29e;
+        --text-muted: #78716c;
+        --border: #44403c;
+        --gradient-1: linear-gradient(135deg, #b45309 0%, #c2410c 100%);
+        --gradient-2: linear-gradient(135deg, #b45309 0%, #ea580c 100%);
       }
 
       * {
@@ -55,29 +55,17 @@
         overflow-x: hidden;
       }
 
-      /* Animated background */
       .bg-gradient {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background:
-          radial-gradient(
-            ellipse at 20% 20%,
-            rgba(37, 99, 235, 0.15) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at 80% 80%,
-            rgba(6, 182, 212, 0.1) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at 50% 50%,
-            rgba(118, 75, 162, 0.05) 0%,
-            transparent 70%
-          );
+        background: radial-gradient(
+          ellipse at 30% 0%,
+          rgba(180, 83, 9, 0.08) 0%,
+          transparent 50%
+        );
         z-index: -1;
       }
 
@@ -97,7 +85,7 @@
         padding: 16px 0;
         background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        border-bottom: 1px solid rgba(68, 64, 60, 0.5);
       }
 
       nav {
@@ -240,7 +228,7 @@
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 10px 30px rgba(180, 83, 9, 0.25);
       }
 
       .btn-secondary {
@@ -299,19 +287,19 @@
       }
 
       .code-content .keyword {
-        color: #c678dd;
+        color: #fb923c;
       }
       .code-content .function {
-        color: #61afef;
+        color: #fafaf9;
       }
       .code-content .string {
-        color: #98c379;
+        color: #a8a29e;
       }
       .code-content .comment {
-        color: #5c6370;
+        color: #57534e;
       }
       .code-content .number {
-        color: #d19a66;
+        color: #fdba74;
       }
 
       /* Section Styles */
@@ -548,7 +536,7 @@
         align-items: center;
         gap: 16px;
         padding: 16px;
-        background: rgba(37, 99, 235, 0.1);
+        background: rgba(180, 83, 9, 0.1);
         border-radius: 8px;
         margin-bottom: 24px;
       }
@@ -757,11 +745,14 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1>Hi, I'm <span>Cody Lindley</span></h1>
-            <p class="tagline">Web Front-End UI/UX Engineer & Author</p>
+            <p class="tagline">
+              Principal Engineer at Microsoft • Published Author • Front-End
+              Architect
+            </p>
             <p class="description">
-              Principal Software Engineer at Microsoft with 26+ years of
-              experience crafting exceptional web experiences with HTML, CSS,
-              JavaScript, and modern front-end frameworks.
+              For over two decades, I've been shaping how developers build for
+              the web—through code, books, and the tools that power modern
+              front-end development.
             </p>
 
             <div class="hero-stats">
@@ -863,8 +854,8 @@
         <div class="section-header">
           <h2>📚 Books & Publications</h2>
           <p>
-            Authored, co-authored, and technically edited books on JavaScript
-            and web development
+            Six published books that have helped thousands of developers master
+            JavaScript, the DOM, and modern web development
           </p>
         </div>
 
@@ -883,8 +874,8 @@
             </div>
             <h3>JavaScript Enlightenment</h3>
             <p>
-              Deep dive into JavaScript fundamentals and object-oriented
-              patterns
+              Master JavaScript's core mechanics—objects, prototypes, and the
+              patterns that power professional codebases
             </p>
           </a>
 
@@ -901,7 +892,10 @@
               </svg>
             </div>
             <h3>DOM Enlightenment</h3>
-            <p>Exploring JavaScript and the modern DOM</p>
+            <p>
+              Go beyond jQuery—learn to manipulate the DOM with native
+              JavaScript like a pro
+            </p>
           </a>
 
           <a
@@ -917,7 +911,9 @@
               </svg>
             </div>
             <h3>jQuery Enlightenment</h3>
-            <p>Mastering jQuery fundamentals and best practices</p>
+            <p>
+              The definitive guide to understanding jQuery from the inside out
+            </p>
           </a>
 
           <a
@@ -933,7 +929,10 @@
               </svg>
             </div>
             <h3>jQuery Cookbook</h3>
-            <p>O'Reilly cookbook with practical jQuery solutions</p>
+            <p>
+              Battle-tested solutions for real-world problems, published by
+              O'Reilly Media
+            </p>
           </a>
 
           <a
@@ -949,7 +948,10 @@
               </svg>
             </div>
             <h3>Textpattern Solutions</h3>
-            <p>PHP-based content management made easy</p>
+            <p>
+              A comprehensive guide to building dynamic websites with
+              Textpattern CMS
+            </p>
           </a>
 
           <a
@@ -965,7 +967,10 @@
               </svg>
             </div>
             <h3>Byte-Size Flash MX</h3>
-            <p>Adventures in design optimization</p>
+            <p>
+              Techniques for creating lightweight, high-performance Flash
+              applications
+            </p>
           </a>
         </div>
       </div>
@@ -976,7 +981,10 @@
       <div class="container">
         <div class="section-header">
           <h2>💼 Featured Work</h2>
-          <p>Guides, handbooks, and component-driven software development</p>
+          <p>
+            Industry-recognized handbooks, conference talks, and open-source
+            contributions shaping how developers learn and build
+          </p>
         </div>
 
         <div class="work-grid">
@@ -1148,7 +1156,8 @@
         <div class="section-header">
           <h2>✍️ Selected Articles</h2>
           <p>
-            Technical articles on JavaScript, React, and front-end development
+            Deep dives and practical guides that break down complex front-end
+            concepts into actionable knowledge
           </p>
         </div>
 
@@ -1226,7 +1235,10 @@
       <div class="container">
         <div class="section-header">
           <h2>🛠️ Tools & References</h2>
-          <p>Open source tools and references I've created for the community</p>
+          <p>
+            Open-source resources built to save developers time and make
+            front-end development more accessible
+          </p>
         </div>
 
         <div class="tools-grid">
@@ -1236,7 +1248,10 @@
             target="_blank"
           >
             <h4>jQuery Widget Toolkit Comparison</h4>
-            <p>Compare different jQuery UI widget toolkits</p>
+            <p>
+              Side-by-side comparison to choose the right UI toolkit for your
+              project
+            </p>
           </a>
           <a
             href="https://github.com/codylindley/frontend-tools"
@@ -1244,7 +1259,10 @@
             target="_blank"
           >
             <h4>Frontend Development Tools</h4>
-            <p>Landscaping with frontend development tools</p>
+            <p>
+              A curated collection of essential tools for modern front-end
+              workflows
+            </p>
           </a>
           <a
             href="http://codylindley.com/native"
@@ -1252,7 +1270,10 @@
             target="_blank"
           >
             <h4>Native HTML Widgets/Forms</h4>
-            <p>Reference for native HTML form elements</p>
+            <p>
+              Visual reference showcasing every native HTML form element and its
+              behavior
+            </p>
           </a>
           <a
             href="http://www.webbrowsercompatibility.com/"
@@ -1260,7 +1281,10 @@
             target="_blank"
           >
             <h4>Web Browser Compatibility</h4>
-            <p>Compatibility tables for front-end technologies</p>
+            <p>
+              Quick-reference compatibility tables for HTML, CSS, and JavaScript
+              features
+            </p>
           </a>
           <a
             href="http://codylindley.com/jqueryselectors/"
@@ -1268,7 +1292,7 @@
             target="_blank"
           >
             <h4>jQuery Selectors</h4>
-            <p>Complete reference for jQuery selectors</p>
+            <p>Every jQuery selector explained with examples and use cases</p>
           </a>
           <a
             href="http://codylindley.com/thickbox"
@@ -1276,7 +1300,10 @@
             target="_blank"
           >
             <h4>Thickbox</h4>
-            <p>Classic modal/lightbox jQuery plugin</p>
+            <p>
+              The original lightbox plugin that inspired a generation of modal
+              libraries
+            </p>
           </a>
         </div>
       </div>
@@ -1292,23 +1319,23 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              I'm a <strong>web front-end UI/UX engineer</strong> and recovering
-              Flash developer with an extensive background working
-              professionally for <strong>26+ years</strong> with HTML, CSS,
-              JavaScript, and client-side performance techniques as it pertains
-              to web development.
+              I'm a <strong>front-end architect</strong> and recovering Flash
+              developer who's spent <strong>26+ years</strong> obsessing over
+              every pixel, millisecond, and line of JavaScript that makes the
+              web work.
             </p>
             <p>
-              When I'm not wielding client-side code, I'm likely toying with
-              <strong>interface/interaction design</strong>,
-              <strong>Design Systems</strong>, and
-              <strong>Component UI systems</strong>. I'm passionate about
-              creating scalable, maintainable, and beautiful user interfaces.
+              Beyond writing code, I'm deeply invested in
+              <strong>Design Systems</strong>,
+              <strong>component architectures</strong>, and the intersection of
+              engineering and design. I believe the best interfaces are built on
+              scalable foundations—and I've spent my career helping teams build
+              them.
             </p>
             <p>
-              When not sitting in front of a computer, it's a sure bet I'm
-              hanging out with my wife and three boys in
-              <strong>Meridian, Idaho</strong>.
+              When I step away from the keyboard, you'll find me exploring
+              Idaho's trails with my wife and our three boys in
+              <strong>Meridian</strong>.
             </p>
           </div>
 
@@ -1388,7 +1415,7 @@
           </a>
         </div>
         <p class="footer-text">
-          © 2026 Cody Lindley. Building the web since 1999.
+          © 2026 Cody Lindley • Crafting the web since 1999
         </p>
       </div>
     </footer>
